@@ -31,7 +31,7 @@ public class InventoryTest {
 	public void test() {
 		TestItem test= new TestItem();
 		InventoryEntry e = new InventoryEntry("test");
-		Inventory v =new Inventory();
+		Inventory v = Inventory.getInstance();
 		Assert.assertTrue(v.addInventory(test, 5));
 		Assert.assertEquals(v.getInventory(test),5);
 		v.reduceInventory(test, 3);

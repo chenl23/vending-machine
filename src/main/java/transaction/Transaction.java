@@ -4,7 +4,8 @@ public class Transaction {
 
 	private float balance;
 	
-	private  Inventory inventory= new Inventory();
+	private  Inventory inventory= Inventory.getInstance();
+
 	public Inventory getInventory() {
 		return inventory;
 	}

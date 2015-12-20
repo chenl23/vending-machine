@@ -10,11 +10,21 @@ import java.util.Hashtable;
 import java.util.Iterator;
 
 public class Inventory {
+
+        private static Inventory inventory = null;
+
 	private Hashtable<String, Integer> htable = new Hashtable<String, Integer>();
 	
 	private ItemDAO dao = new ItemDAO();
+
+        public static Inventory getInstance() {
+            if (inventory == null)
+                inventory = new Inventory();
+            
+            return inventory;
+        }
 	
-	public Inventory()
+	private Inventory()
 	{
 		try {
 			List<InventoryEntry> entries = dao.getAllItems();
